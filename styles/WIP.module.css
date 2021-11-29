@@ -1,0 +1,33 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.title {
+	font-size: 32px;
+	font-weight: bold;
+	text-align: center;
+	user-select: text;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 48px;
+    background: transparent;
+    border: 1px solid var(--light);
+    border-radius: 5px;
+    transition: border color .1s linear;
+}
+
+.button:hover {
+    color: var(--highlight);
+    border-color: var(--highlight);
+}

@@ -1,16 +1,36 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@font-face {
+    font-family: Sansation;
+    src: url(../public/Sansation_Regular.ttf);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+    --background: #060606;
+    --subbackground: #161616;
+    --highlight: #03a062;
+    --light: #eeeeee;
 }
 
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-size: 18px;
+    font-family: Sansation;
+    font-weight: normal;
+	font-display: optional;
+	line-height: 1.5;
+    box-sizing: border-box;
+    color: var(--light);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+body {
+	background: var(--background);
+}
+
+a {
+    text-decoration: none;
 }
