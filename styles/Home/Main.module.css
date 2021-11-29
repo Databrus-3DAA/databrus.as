@@ -1,20 +1,33 @@
 .container {
 	width: 100%;
-	min-height: calc(100vh - 60px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
 
-.home {
-	margin-top: -48px;
+.bgimg1, .bgimg2, .bgimg3 {
+	width: 100%;
 	height: 100vh;
+	opacity: 0.75;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-.home span * {
-	z-index: -1;
-	opacity: 0.75;
+.bgimg1 {
+	min-height: 100%;
+	background-attachment: fixed;
+}
+
+.bgimg2 {
+	height: 400px;
+	background-attachment: fixed;
+}
+
+.bgimg3 {
+	height: 400px;
+	background-attachment: scroll;
 }
 
 .tittleContainer {
@@ -25,13 +38,19 @@
 }
 
 .tittle {
+	z-index: 1;
 	font-family: Sansation;
 	font-size: 40px;
-	letter-spacing: 8px;
 	padding: 10px 20px;
 	color: var(--highlight);
 	background-color: var(--subbackground);
-	user-select: all;
+}
+
+.tittle span {
+	font-size: 40px;
+	letter-spacing: 8px;
+	color: var(--highlight);
+	background-color: var(--subbackground);
 }
 
 .main {
@@ -39,4 +58,78 @@
 	margin-right: auto;
 	padding: 64px 16px;
 	max-width: 980px;
+}
+
+.main * {
+	font-family: Roboto;
+	margin: 10px 16px;
+}
+
+.main h1 {
+	font-family: Sansation;
+	font-size: 24px;
+}
+
+.highlight {
+	color: var(--highlight);
+}
+
+.center {
+	text-align: center;
+}
+
+.grid {
+	margin-top: 20px !important;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.grid div {
+	margin: 0;
+	max-width: 450px;
+}
+
+.logo {
+	border: 4px solid var(--highlight);
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.contact {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact div {
+	display: grid;
+    grid-template-columns: 24px auto;
+    grid-gap: 12px;
+}
+
+.contact a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    color: var(--light);
+    text-decoration: none;
+    background-image: linear-gradient(var(--light), var(--light));
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 0% 3px;
+    transition: .25s linear;
+}
+
+.contact a:hover {
+    background-size: 100% 3px;
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+}
+
+.icon * {
+	color: var(--highlight);
 }

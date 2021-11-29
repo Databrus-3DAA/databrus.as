@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import isMobile from '@/lib/isMobile';
 import style from '@/styles/Home/Header.module.css';
 import mStyle from '@/styles/Home/Mobile/Header.module.css'
-import { RiMenuUnfoldLine, RiMenuFoldLine } from 'react-icons/ri';
 import { MdMenu } from 'react-icons/md';
 import { navItems } from '@/assets/data';
 import { useScroll } from '@/lib/hooks/useScroll';
@@ -11,7 +10,7 @@ import Link from 'next/link';
 function MobileMenu() {
     const [navBarOpen, setNavBarOpen] = useState(false);
     const listItems = navItems.map((item: any) => <Link key={item.label} href={item.path}><a className={mStyle.dropItem} onClick={() => {setNavBarOpen(!navBarOpen)}}>{item.label}</a></Link>);
-    const transparent = useScroll() < 100;
+    const transparent = useScroll() < 20;
     
     return (
         <div className={style.container}>

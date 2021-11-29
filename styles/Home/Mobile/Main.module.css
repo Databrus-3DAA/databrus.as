@@ -1,0 +1,17 @@
+.flex {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flex div {
+    margin: 0;
+    min-width: 100%;
+}
+
+.flex div h1, .flex div p {
+    margin: 0;
+}
