@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Sansation;
-    src: url(../public/Sansation_Regular.ttf);
+    src: url(/Sansation_Regular.ttf);
 }
 
 :root {
