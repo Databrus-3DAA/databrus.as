@@ -1,0 +1,16 @@
+.logo{
+    position: absolute;
+    width: 400px;
+    height: 1100px;
+
+    background: #1E1E1E;
+}
+
+.label{
+    position: absolute;
+    width: 577px;
+    height: 81px;
+
+    background: #1E1E1E;
+}
+
