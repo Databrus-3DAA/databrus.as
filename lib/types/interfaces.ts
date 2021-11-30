@@ -12,3 +12,5 @@ export interface iItem {
 }
 
 export type iItems = iItem[] | {message?: string};
+
+export type product = "cocaCola" | "cocaColaZero";

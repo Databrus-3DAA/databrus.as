@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from '@/styles/Error.module.css';
+import styles from '@styles/Error.module.css';
 
 function Custom500() {
     return (

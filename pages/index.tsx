@@ -1,14 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
-import { Header, Footer } from '@/components/Home';
-import style from '@/styles/Home/Main.module.css';
-import mStyle from '@/styles/Home/Mobile/Main.module.css';
+import { Header, Footer } from '@components/Home';
+import style from '@styles/Home/Main.module.css';
+import mStyle from '@styles/Home/Mobile/Main.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import isMobile from '@/lib/isMobile';
+import { isMobile } from '@lib/utils';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
-import Logo from '@/assets/img/logo.png';
+import Logo from '@assets/img/logo.png';
 
 function Home() {
 	if(typeof window == 'undefined') return null;
@@ -27,7 +27,7 @@ function Home() {
 			<div className={style.container}>
 				<div id="home" className={`${mobile ? style.bgimg3 : style.bgimg1}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.tittleContainer}>
-						<div className={style.tittle}>
+						<div className={mobile ? mStyle.tittle : style.tittle}>
 							<span>DATABRUS U</span>B
 						</div>
 					</div>
@@ -70,7 +70,7 @@ function Home() {
 
 				<div className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.tittleContainer}>
-						<div className={style.tittle}>
+						<div className={mobile ? mStyle.tittle : style.tittle}>
 							<span>TEAME</span>T
 						</div>
 					</div>
@@ -84,7 +84,7 @@ function Home() {
 
 				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.tittleContainer}>
-						<div className={style.tittle}>
+						<div className={mobile ? mStyle.tittle : style.tittle}>
 							<span>KONTAKT OS</span>S
 						</div>
 					</div>

@@ -1,3 +1,21 @@
+.tittle {
+    z-index: 1;
+	font-family: Sansation;
+	font-size: 32px;
+	padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--light);
+	color: var(--highlight);
+	background-color: var(--subbackground);
+}
+
+.tittle span {
+	font-size: 32px;
+	letter-spacing: 8px;
+	color: var(--highlight);
+	background-color: var(--subbackground);
+}
+
 .flex {
     margin-top: 20px;
     display: flex;

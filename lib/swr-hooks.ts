@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import useSWR from "swr";
-import { iItems } from "./interfaces";
+import { iItems } from "@type/interfaces";
 
 function fetcher(url: string) {
     return window.fetch(url).then(res => res.json());
 };
 
 export function getItems() {
-    const {data, error} = useSWR(`api/get-items`, fetcher);
+    const {data, error} = useSWR(`api/machine/items`, fetcher);
     
     return {
         items: data as iItems,
@@ -17,7 +17,7 @@ export function getItems() {
 };
 
 export function getItem(id: string) {
-    const {data, error} = useSWR(`/api/get-item?id=${id}`, fetcher);
+    const {data, error} = useSWR(`/api/api/machine/items/${id}`, fetcher);
     
     return {
         item: data,
