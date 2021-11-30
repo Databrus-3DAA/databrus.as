@@ -6,6 +6,7 @@ import mStyle from '@styles/Home/Mobile/Main.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { isMobile } from '@lib/utils';
+import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import Logo from '@assets/img/logo.png';
@@ -68,7 +69,7 @@ function Home() {
 					</div>
 				</div>
 
-				<div className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
+				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('https://thumbs.dreamstime.com/b/cool-wallpapers-backgrounds-check-out-our-68126782.jpg"}}>
 					<div className={style.tittleContainer}>
 						<div className={mobile ? mStyle.tittle : style.tittle}>
 							<span>TEAME</span>T
@@ -76,7 +77,7 @@ function Home() {
 					</div>
 				</div>
 
-				<div id="team" className={style.main}>
+				<div className={style.main}>
 					<p className={`${style.center} ${style.highlight}`}>
 						Bilder av Teamet kommer etterhvert.
 					</p>
@@ -90,8 +91,8 @@ function Home() {
 					</div>
 				</div>
 
-				<div className={style.main}>
-					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row'}}>
+				<div className={style.main} style={{maxWidth: '100vw'}}>
+					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row', width: '100%'}}>
 						<div>
 							<MdLocationOn className={style.icon} />
 							<Link href="https://goo.gl/maps/9JbEKKbJYLHHeNor9">Dyreveien 9, 1532 Moss</Link>
@@ -100,6 +101,11 @@ function Home() {
 						<div>
 							<MdMail className={style.icon} />
 							<Link href="mailto:databrus.contact@gmail.com">databrus.contact@gmail.com</Link>
+						</div>
+
+						<div>
+							<AiFillInstagram className={style.icon} />
+							<Link href="https://instagram.com/databrus.ub">databrus.ub</Link>
 						</div>
 						
 						<div>
