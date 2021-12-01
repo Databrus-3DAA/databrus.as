@@ -21,6 +21,6 @@ export const navItems = [
     },
     {
         label: "Admin",
-        path: "/wip"
+        path: "/admin"
     }
 ];
