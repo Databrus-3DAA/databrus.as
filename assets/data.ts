@@ -17,10 +17,10 @@ export const navItems = [
     },
     {
         label: "Kjøp",
-        path: "/order"
+        path: "/wip"
     },
     {
         label: "Admin",
-        path: "/admin"
+        path: "/wip"
     }
 ];

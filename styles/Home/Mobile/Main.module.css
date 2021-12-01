@@ -1,4 +1,4 @@
-.tittle {
+.title {
     z-index: 1;
 	font-family: Sansation;
 	font-size: 32px;
@@ -9,7 +9,7 @@
 	background-color: var(--subbackground);
 }
 
-.tittle span {
+.title span {
 	font-size: 32px;
 	letter-spacing: 8px;
 	color: var(--highlight);

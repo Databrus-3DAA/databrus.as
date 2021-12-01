@@ -15,7 +15,7 @@ function MobileMenu() {
     return (
         <div className={style.container}>
             <div className={transparent ? style.hide : style.show}>
-                <div className={`${style.tittle} ${transparent ? style.tHide : style.tShow}`}>DATABRUS UB</div>
+                <div className={`${style.title} ${transparent ? style.tHide : style.tShow}`}>DATABRUS UB</div>
                 
                 <button className={mStyle.button} onClick={() => {setNavBarOpen(!navBarOpen)}}><MdMenu /></button>
                     
@@ -34,7 +34,7 @@ function Menu() {
     return (
         <div className={style.container}>
             <div className={transparent ? style.hide : style.show}>           
-                <div className={`${style.tittle} ${transparent ? style.tHide : style.tShow}`}>DATABRUS UB</div>     
+                <div className={`${style.title} ${transparent ? style.tHide : style.tShow}`}>DATABRUS UB</div>     
                 
                 <div className={style.items}>
                     { listItems }

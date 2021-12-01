@@ -27,8 +27,8 @@ function Home() {
 
 			<div className={style.container}>
 				<div id="home" className={`${mobile ? style.bgimg3 : style.bgimg1}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
-					<div className={style.tittleContainer}>
-						<div className={mobile ? mStyle.tittle : style.tittle}>
+					<div className={style.titleContainer}>
+						<div className={mobile ? mStyle.title : style.title}>
 							<span>DATABRUS U</span>B
 						</div>
 					</div>
@@ -70,8 +70,8 @@ function Home() {
 				</div>
 
 				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('https://thumbs.dreamstime.com/b/cool-wallpapers-backgrounds-check-out-our-68126782.jpg"}}>
-					<div className={style.tittleContainer}>
-						<div className={mobile ? mStyle.tittle : style.tittle}>
+					<div className={style.titleContainer}>
+						<div className={mobile ? mStyle.title : style.title}>
 							<span>TEAME</span>T
 						</div>
 					</div>
@@ -84,14 +84,14 @@ function Home() {
 				</div>
 
 				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
-					<div className={style.tittleContainer}>
-						<div className={mobile ? mStyle.tittle : style.tittle}>
+					<div className={style.titleContainer}>
+						<div className={mobile ? mStyle.title : style.title}>
 							<span>KONTAKT OS</span>S
 						</div>
 					</div>
 				</div>
 
-				<div className={style.main} style={{maxWidth: '100vw'}}>
+				<div className={style.main}>
 					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row', width: '100%'}}>
 						<div>
 							<MdLocationOn className={style.icon} />
