@@ -91,7 +91,7 @@ function Home() {
 					</div>
 				</div>
 
-				<div className={style.main}>
+				<div className={style.main} style={{maxWidth: '100vw'}}>
 					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row', width: '100%'}}>
 						<div>
 							<MdLocationOn className={style.icon} />
