@@ -84,37 +84,49 @@ function Home() {
 							Under er alles navn og hovedrolle i teamet.
 						</p>
 						<div className={style.team}>
-							<div id="Tomas" className={style.teammember}>
-								<div className={style.teambilde}>
-									<Image src={Tomas} alt="Tomas" layout="responsive" />
-								</div>
-								<div className={style.teamname}>Grunnlegger: Tomas</div>
-							</div>
 
-							<div id="Tomas" className={style.teammember}>
-								<Image src={Tomas} alt="Tomas"/>
-								<p>Grunnlegger: Tomas</p>
+						<div id="Tomas" className={style.teammember}>
+							<div className={style.teambilde}>
+								<Image src={Tomas} alt="Tomas" layout="responsive" />
 							</div>
+							<div className={style.teamname}>Grunnlegger: Tomas</div>
+						</div>
 
-							<div id="Tomas" className={style.teammember}>
-								<Image src={Tomas} alt="Tomas"/>
-								<p>Grunnlegger: Tomas</p>
+						<div id="Erling" className={style.teammember}>
+							<div className={style.teambilde}>
+								<Image src={Tomas} alt="Erling" layout="responsive" />
 							</div>
-							
-							<div id="Tomas" className={style.teammember}>
-								<Image src={Tomas} alt="Tomas"/>
-								<p>Grunnlegger: Tomas</p>
-							</div>
+							<div className={style.teamname}>CEO: Erling</div>
+						</div>
 
-							<div id="Tomas" className={style.teammember}>
-								<Image src={Tomas} alt="Tomas"/>
-								<p>Grunnlegger: Tomas</p>
+						<div id="Linus" className={style.teammember}>
+							<div className={style.teambilde}>
+								<Image src={Tomas} alt="Linus" layout="responsive" />
 							</div>
+							<div className={style.teamname}>VP: Linus</div>
+						</div>
 
-							<div id="Tomas" className={style.teammember}>
-								<Image src={Tomas} alt="Tomas"/>
-								<p>Grunnlegger: Tomas</p>
+						<div id="Thomas" className={style.teammember}>
+							<div className={style.teambilde}>
+								<Image src={Tomas} alt="Thomas" layout="responsive" />
 							</div>
+							<div className={style.teamname}>Utvikler: Thomas</div>
+						</div>
+
+						<div id="Sander" className={style.teammember}>
+							<div className={style.teambilde}>
+								<Image src={Tomas} alt="Sander" layout="responsive" />
+							</div>
+							<div className={style.teamname}>Utvikler: Sander</div>
+						</div>
+
+						<div id="Steinar" className={style.teammember}>
+							<div className={style.teambilde}>
+								<Image src={Tomas} alt="Steinar" layout="responsive" />
+							</div>
+							<div className={style.teamname}>Personalsjef: Steinar</div>
+						</div>
+
 						</div>
 					</div>
 
