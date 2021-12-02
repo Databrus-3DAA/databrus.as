@@ -10,6 +10,7 @@ import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import Logo from '@assets/img/logo.png';
+import Tomas from '@assets/img/1.png';
 
 function Home() {
 	if(typeof window == 'undefined') return null;
@@ -76,13 +77,47 @@ function Home() {
 						</div>
 					</div>
 				</div>
+				<section>
+					<div className={style.main}>
+						<p className={`${style.center} ${style.highlight}`}>
+							Bilder av Teamet kommer etterhvert.
+						</p>
+					</div>
 
-				<div className={style.main}>
-					<p className={`${style.center} ${style.highlight}`}>
-						Bilder av Teamet kommer etterhvert.
-					</p>
-				</div>
+					<div className={style.team}>
+						<div id="Tomas" className={style.teambilde}>
+							<Image src={Tomas} alt="Tomas"/>
+							<p>Grunnlegger: Tomas</p>
+						</div>
 
+						<div id="Tomas" className={style.teambilde}>
+							<Image src={Tomas} alt="Tomas"/>
+							<p>Grunnlegger: Tomas</p>
+						</div>
+
+						<div id="Tomas" className={style.teambilde}>
+							<Image src={Tomas} alt="Tomas"/>
+							<p>Grunnlegger: Tomas</p>
+						</div>
+					</div>
+					<br/>
+					<div className={style.team}>
+						<div id="Tomas" className={style.teambilde}>
+							<Image src={Tomas} alt="Tomas"/>
+							<p>Grunnlegger: Tomas</p>
+						</div>
+
+						<div id="Tomas" className={style.teambilde}>
+							<Image src={Tomas} alt="Tomas"/>
+							<p>Grunnlegger: Tomas</p>
+						</div>
+
+						<div id="Tomas" className={style.teambilde}>
+							<Image src={Tomas} alt="Tomas"/>
+							<p>Grunnlegger: Tomas</p>
+						</div>
+					</div>
+				</section>
 				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>

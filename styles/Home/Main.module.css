@@ -136,3 +136,17 @@
 .icon * {
 	color: var(--highlight);
 }
+
+.team {
+	width: 100%;
+	display: flex;
+	align-items: left;
+	justify-content: left;
+	flex-direction: column;
+}
+
+
+.teambilde{
+	display: flex;
+	text-align: center;
+}
