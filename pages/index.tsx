@@ -70,54 +70,55 @@ function Home() {
 					</div>
 				</div>
 
-				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('https://thumbs.dreamstime.com/b/cool-wallpapers-backgrounds-check-out-our-68126782.jpg"}}>
+				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('https://c.pxhere.com/photos/96/c7/accomplishment_achievement_adult_Bangkok_businessmen_businesswomen_celebrating_celebration-1555417.jpg!d"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
 							<span>TEAME</span>T
 						</div>
 					</div>
 				</div>
-				<section>
+
 					<div className={style.main}>
+						<h1 className={style.center}>Møt teamet bak Databrus</h1>
 						<p className={`${style.center} ${style.highlight}`}>
-							Bilder av Teamet kommer etterhvert.
+							Under er alles navn og hovedrolle i teamet.
 						</p>
+						<div className={style.team}>
+							<div id="Tomas" className={style.teammember}>
+								<div className={style.teambilde}>
+									<Image src={Tomas} alt="Tomas" layout="responsive" />
+								</div>
+								<div className={style.teamname}>Grunnlegger: Tomas</div>
+							</div>
+
+							<div id="Tomas" className={style.teammember}>
+								<Image src={Tomas} alt="Tomas"/>
+								<p>Grunnlegger: Tomas</p>
+							</div>
+
+							<div id="Tomas" className={style.teammember}>
+								<Image src={Tomas} alt="Tomas"/>
+								<p>Grunnlegger: Tomas</p>
+							</div>
+							
+							<div id="Tomas" className={style.teammember}>
+								<Image src={Tomas} alt="Tomas"/>
+								<p>Grunnlegger: Tomas</p>
+							</div>
+
+							<div id="Tomas" className={style.teammember}>
+								<Image src={Tomas} alt="Tomas"/>
+								<p>Grunnlegger: Tomas</p>
+							</div>
+
+							<div id="Tomas" className={style.teammember}>
+								<Image src={Tomas} alt="Tomas"/>
+								<p>Grunnlegger: Tomas</p>
+							</div>
+						</div>
 					</div>
 
-					<div className={style.team}>
-						<div id="Tomas" className={style.teambilde}>
-							<Image src={Tomas} alt="Tomas"/>
-							<p>Grunnlegger: Tomas</p>
-						</div>
-
-						<div id="Tomas" className={style.teambilde}>
-							<Image src={Tomas} alt="Tomas"/>
-							<p>Grunnlegger: Tomas</p>
-						</div>
-
-						<div id="Tomas" className={style.teambilde}>
-							<Image src={Tomas} alt="Tomas"/>
-							<p>Grunnlegger: Tomas</p>
-						</div>
-					</div>
-					<br/>
-					<div className={style.team}>
-						<div id="Tomas" className={style.teambilde}>
-							<Image src={Tomas} alt="Tomas"/>
-							<p>Grunnlegger: Tomas</p>
-						</div>
-
-						<div id="Tomas" className={style.teambilde}>
-							<Image src={Tomas} alt="Tomas"/>
-							<p>Grunnlegger: Tomas</p>
-						</div>
-
-						<div id="Tomas" className={style.teambilde}>
-							<Image src={Tomas} alt="Tomas"/>
-							<p>Grunnlegger: Tomas</p>
-						</div>
-					</div>
-				</section>
+				
 				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
