@@ -14,10 +14,10 @@ function Order() {
             <div className={style.labelTop}>Velg Produkt</div>
 
             <div className={style.label1}>
-                <div className={style.labelTx}>DATABRUS</div>
+                <p className={style.labelTx}>DATABRUS</p>
             </div>
             <div className={style.label2}>
-                <div className={style.labelTx}>DATABRUS</div>
+                <p className={style.labelTx}>DATABRUS</p>
             </div>
             
         </div>
