@@ -42,16 +42,17 @@
 
 .labelTx {
   position: absolute;
-  width: 350px;
-  height: 720px;
-  left: 50px;
+  width: 1px;
+  height: 600px;
+  left: 180px;
   top: 50px;
 
   font-family: Sansation;
   font-style: normal;
   font-weight: normal;
-  font-size: 72px;
+  font-size: 56px;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .label2 {
