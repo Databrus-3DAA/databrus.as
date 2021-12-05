@@ -34,25 +34,26 @@
   position: absolute;
   width: 400px;
   height: 770px;
+  /* margin-top: 40px;
+  margin-left: 40px; */
   left: 42px;
   top: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: #333;
 }
 
 .labelTx {
-  position: absolute;
-  width: 1px;
-  height: 600px;
-  left: 180px;
-  top: 50px;
-
   font-family: Sansation;
   font-style: normal;
   font-weight: normal;
-  font-size: 56px;
+  font-size: 60px;
   text-align: center;
-  word-wrap: break-word;
+  text-orientation: upright;
+  writing-mode: vertical-rl;
 }
 
 .label2 {
@@ -61,6 +62,10 @@
   height: 770px;
   right: 42px;
   top: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: #333;
 }
