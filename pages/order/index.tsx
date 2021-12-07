@@ -9,9 +9,9 @@ function Machines() {
             </div>
             <div className={style.undersqare}>
                 <button className={style.maskin}></button>
+                {/* <button className={style.maskin}></button>
                 <button className={style.maskin}></button>
-                <button className={style.maskin}></button>
-                <button className={style.maskin}></button>
+                <button className={style.maskin}></button> */}
             </div>
         </div>
     )

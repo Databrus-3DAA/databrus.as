@@ -26,7 +26,8 @@
 }
 
 .maskin {
-  height: 600px;
+  position: relative;
+  height: 525px;
   width: 350px;
   top: 200px;
   left: 50px;
