@@ -80,6 +80,13 @@ function Home() {
 					</div>
 				</div>
 
+				<div className={style.stock}>
+					<div className={style.main}>
+						{/* Todo stock */}
+					</div>
+				</div>
+
+
 				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/team.png')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
