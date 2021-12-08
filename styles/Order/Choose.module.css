@@ -1,0 +1,38 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  background-color: #1e1e1e;
+}
+
+.label {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+
+  background-color: #3333;
+}
+
+.labeltx {
+  font-family: sensation;
+  text-align: center;
+  font-size: 75px;
+}
+
+.undersqare {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.maskin {
+  position: relative;
+  height: 525px;
+  width: 350px;
+  top: 200px;
+  left: 50px;
+
+  justify-content: center;
+
+  background-color: #c4c4c4;
+}

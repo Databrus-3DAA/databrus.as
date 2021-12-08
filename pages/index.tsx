@@ -9,7 +9,7 @@ import { isMobile } from '@lib/utils';
 import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
-import Logo from '@assets/img/logo.png';
+import Logo from '@assets/img/logo.svg';
 import { teamMembers } from '@assets/data';
 
 function Home() {
@@ -80,7 +80,7 @@ function Home() {
 					</div>
 				</div>
 
-				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('https://c.pxhere.com/photos/96/c7/accomplishment_achievement_adult_Bangkok_businessmen_businesswomen_celebrating_celebration-1555417.jpg!d"}}>
+				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/team.png')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
 							<span>TEAME</span>T
