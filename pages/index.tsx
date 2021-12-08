@@ -10,14 +10,19 @@ import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import Logo from '@assets/img/logo.png';
-import Tomas from '@assets/img/Team/1.png';
-import Erling from '@assets/img/Team/2.png';
-import Linus from '@assets/img/Team/3.png';
-import Thomas from '@assets/img/Team/4.png';
-import Sander from '@assets/img/Team/5.png';
-import Steinar from '@assets/img/Team/6.png';
+import { teamMembers } from '@assets/data';
 
 function Home() {
+	const TeamMembers = teamMembers.map((member: any) => (
+		<div key={member.title} className={style.teammember}>
+			<div className={style.teambilde}>
+				<Image src={member.img} alt="" layout="responsive" />
+			</div>
+			
+			<div className={style.teamname}>{member.title}</div>
+		</div>
+	));
+
 	if(typeof window == 'undefined') return null;
 	
 	const mobile = isMobile();
@@ -85,53 +90,13 @@ function Home() {
 
 					<div className={style.main}>
 						<h1 className={style.center}>Møt teamet bak Databrus</h1>
+						
 						<p className={`${style.center} ${style.highlight}`}>
 							Under er alles navn og hovedrolle i teamet.
 						</p>
+
 						<div className={style.team}>
-
-						<div id="Tomas" className={style.teammember}>
-							<div className={style.teambilde}>
-								<Image src={Tomas} alt="Tomas" layout="responsive" />
-							</div>
-							<div className={style.teamname}>Grunnlegger: Tomas</div>
-						</div>
-
-						<div id="Erling" className={style.teammember}>
-							<div className={style.teambilde}>
-								<Image src={Erling} alt="Erling" layout="responsive" />
-							</div>
-							<div className={style.teamname}>CEO: Erling</div>
-						</div>
-
-						<div id="Linus" className={style.teammember}>
-							<div className={style.teambilde}>
-								<Image src={Linus} alt="Linus" layout="responsive" />
-							</div>
-							<div className={style.teamname}>VP: Linus</div>
-						</div>
-
-						<div id="Thomas" className={style.teammember}>
-							<div className={style.teambilde}>
-								<Image src={Thomas} alt="Thomas" layout="responsive" />
-							</div>
-							<div className={style.teamname}>Utvikler: Thomas</div>
-						</div>
-
-						<div id="Sander" className={style.teammember}>
-							<div className={style.teambilde}>
-								<Image src={Sander} alt="Sander" layout="responsive" />
-							</div>
-							<div className={style.teamname}>Utvikler: Sander</div>
-						</div>
-
-						<div id="Steinar" className={style.teammember}>
-							<div className={style.teambilde}>
-								<Image src={Steinar} alt="Steinar" layout="responsive" />
-							</div>
-							<div className={style.teamname}>Personalsjef: Steinar</div>
-						</div>
-
+							{ TeamMembers }
 						</div>
 					</div>
 
