@@ -5,29 +5,27 @@ function Stock(){
     return(
             <div className={style.stock}>
                 <div>
-                    <div>
-                        Coca cola
-                    </div>
+                    Coca cola
+                </div>
 
-                    <div>
-                        Fanta
-                    </div>
+                <div>
+                    Fanta
+                </div>
 
-                    <div>
-                        Red Bull
-                    </div>
+                <div>
+                    Red Bull
+                </div>
 
-                    <div>
-                        Fanta
-                    </div>
+                <div>
+                    Fanta
+                </div>
 
-                    <div>
-                        Fanta
-                    </div>
+                <div>
+                    Fanta
+                </div>
 
-                    <div>
-                        Fanta
-                    </div>
+                <div>
+                    Fanta
                 </div>
             </div>
     )

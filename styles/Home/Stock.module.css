@@ -1,15 +1,16 @@
 .stock {
-	display: flex;
 	text-align: center;
 	justify-content: center;
-	flex-wrap: wrap;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns:auto auto auto;
+    grid-gap: 100px;
     font-size: 20px;
 }
 
 .stock div{
-    display: grid;
-    grid-template-columns:auto auto auto;
-    grid-gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
