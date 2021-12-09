@@ -81,6 +81,7 @@ function Home() {
 					</div>
 				</div>
 
+		<h2>Vinkjelleren inndeholder</h2>
 			<div className={style.colorstock}>
 				<Stock/>
 			</div>

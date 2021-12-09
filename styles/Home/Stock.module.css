@@ -11,6 +11,7 @@
 .stock div{
     display: flex;
     flex-wrap: wrap;
+    color: black;
 }
 
 

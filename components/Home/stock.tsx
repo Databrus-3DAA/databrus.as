@@ -17,15 +17,15 @@ function Stock(){
                 </div>
 
                 <div>
-                    Fanta
+                    Sprite
                 </div>
 
                 <div>
-                    Fanta
+                    Battery
                 </div>
 
                 <div>
-                    Fanta
+                    Mønster
                 </div>
             </div>
     )
