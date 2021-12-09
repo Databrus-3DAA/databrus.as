@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Header, Footer } from '@components/Home';
+import { Header, Footer, Stock} from '@components/Home';
 import style from '@styles/Home/Main.module.css';
 import mStyle from '@styles/Home/Mobile/Main.module.css';
 import Image from 'next/image';
@@ -11,6 +11,7 @@ import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import Logo from '@assets/img/logo.svg';
 import { teamMembers } from '@assets/data';
+//import { stock } from '@components/Home/stock'
 
 function Home() {
 	const TeamMembers = teamMembers.map((member: any) => (
@@ -80,12 +81,9 @@ function Home() {
 					</div>
 				</div>
 
-				<div className={style.stock}>
-					<div className={style.main}>
-						{/* Todo stock */}
-					</div>
-				</div>
-
+			<div className={style.colorstock}>
+				<Stock/>
+			</div>
 
 				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/team.png')"}}>
 					<div className={style.titleContainer}>
