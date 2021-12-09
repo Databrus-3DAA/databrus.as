@@ -1,6 +1,7 @@
+import axios from "axios";
 import { useMediaQuery } from "react-responsive";
 
-export const fetcher = (url: string) => fetch(url).then((res) => res.json());
+export const fetcher = async (url: string) => await axios.get(url).then((res) => res.data);
 
 export function isMobile() {
     // eslint-disable-next-line react-hooks/rules-of-hooks

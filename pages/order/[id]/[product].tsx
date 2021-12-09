@@ -1,11 +1,20 @@
 import React from 'react';
+import useSWR from 'swr';
 import { useRouter } from 'next/router';
+import { fetcher } from '@lib/utils';
 
 function Payment() {
-    const { query, back } = useRouter();
+    const { query: { id, product }, back } = useRouter();
+    const { data, error } = useSWR(`/api/machines/${id}/items/${product}`, fetcher);
+    
+    if(error) {
+        console.log(error)
+        return "An error has occured";
+    }
 
-    console.log(query.id);
-    console.log(query.product);
+    if(!data) return "Loading...";
+
+    console.log(data)
 
     return (
         <div>

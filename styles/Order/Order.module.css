@@ -1,71 +1,75 @@
 .container {
-  width: 100%;
-  height: 100%;
-
-  background-color: #1e1e1e;
+	width: 100%;
+	height: 100vh;
 }
 
-.logo {
-  position: absolute;
-  width: 400px;
-  height: 1100px;
-
-  background: #1e1e1e;
+.header {
+	width: 100%;
+	height: 60px;
+	background: var(--subbackground);
 }
 
-.labelTop {
-  position: absolute;
-  width: 577px;
-  height: 81px;
-
-  left: 577px;
-  top: 15px;
-
-  text-align: center;
-  font-family: Sansation;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 48px;
-
-  background: #333;
+.backButton {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	width: 48px;
+	height: 48px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.label1 {
-  position: absolute;
-  width: 400px;
-  height: 770px;
-  /* margin-top: 40px;
-  margin-left: 40px; */
-  left: 42px;
-  top: 42px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: #333;
+.icon {
+	width: 32px;
+	height: 32px;
 }
 
-.labelTx {
-  font-family: Sansation;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 60px;
-  text-align: center;
-  text-orientation: upright;
-  writing-mode: vertical-rl;
+.icon * {
+	color: var(--light);
 }
 
-.label2 {
-  position: absolute;
-  width: 400px;
-  height: 770px;
-  right: 42px;
-  top: 42px;
+.backButton:hover * {
+	color: var(--highlight);
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.title {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 36px;
+}
 
-  background-color: #333;
+.main {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+	max-width: 980px;
+	width: 100%;
+}
+
+.status {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: Roboto;
+
+	width: 100%;
+	height: 100%;
+
+	font-size: 24px;
+}
+
+.itemContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
 }
