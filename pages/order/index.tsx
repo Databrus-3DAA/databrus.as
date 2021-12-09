@@ -1,12 +1,11 @@
 import React from 'react';
-import style from '@styles/Order/Choose.module.css';
 import useSWR from 'swr';
 import { iMachines } from '@lib/types/interfaces';
 import { fetcher } from '@lib/utils';
+import style from '@styles/Order/Choose.module.css';
 
 function Machines() {
     const { data, error } = useSWR('/api/machines', fetcher);
-
     
     if(error) {
         console.log(error)
@@ -14,6 +13,8 @@ function Machines() {
     }
 
     if(!data) return "Loading...";
+
+    console.log(data)
 
     return (
         <div className={style.container}>

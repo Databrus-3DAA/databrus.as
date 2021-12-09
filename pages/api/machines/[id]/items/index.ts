@@ -10,7 +10,6 @@ const handler: NextApiHandler = async(req, res) => {
 
     try {
         const result = await query(`SELECT * FROM machine_items WHERE machineId = ?`, id);
-        await delay(5000);
         return res.json(result);
     } catch(e) {
         if(e instanceof Error) res.status(500).json({ message: e.message });
