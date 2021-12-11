@@ -9,18 +9,25 @@ CREATE TABLE IF NOT EXISTS `machines` (
 );
 
 INSERT INTO `machines` (`location`, `locationDesc`) VALUES
-    ('Malakoff VGS (Dyreveien 9, 1532 Moss)', 'Inne på rom G280');
+    ('Malakoff VGS (Dyreveien 9, 1532 Moss)', 'Inne på rom G280'),
+    ('Malakoff VGS (Dyreveien 9, 1532 Moss)', 'Kantina');
 
 CREATE TABLE IF NOT EXISTS `machine_items` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(60) NOT NULL DEFAULT 'databrus',
     `label` VARCHAR(60) NOT NULL DEFAULT 'Databrus',
+    `pos` LONGTEXT NOT NULL DEFAULT '{"x":0,"y":0}',
     `price` INT NOT NULL DEFAULT 30,
-    `stock` LONGTEXT NOT NULL DEFAULT '{}',
+    `stock` INT NOT NULL DEFAULT 0,
     `machineId` INT NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`machineId`) REFERENCES `machines`(`id`)
 );
 
-INSERT INTO `machine_items` (`name`, `label`, `price`, `stock`, `machineId`) VALUES
-    ('cocaCola', 'Coca Cola', 24, '{"a": {"1":0,"5":2}}', 1);
+INSERT INTO `machine_items` (`name`, `label`, `pos`, `price`, `stock`, `machineId`) VALUES
+    ('cocaCola', 'Coca Cola','{"x":5,"y":"A"}',  24, 22, 1),
+    ('cocaCola', 'Coca Cola','{"x":0,"y":"D"}',  24, 22, 2);
+
+CREATE USER IF NOT EXISTS 'databrus.as'@'%' IDENTIFIED BY 'rErar45iwIruz5XAViVeQ7dagumuro';
+GRANT EXECUTE, SELECT, SHOW VIEW, ALTER, ALTER ROUTINE, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, CREATE VIEW, DELETE, DROP, EVENT, INDEX, INSERT, REFERENCES, TRIGGER, UPDATE, LOCK TABLES  ON `databrus`.* TO 'Test'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;

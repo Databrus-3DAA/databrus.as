@@ -9,12 +9,11 @@ import { isMobile } from '@lib/utils';
 import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
-import Logo from '@assets/img/logo.svg';
 import { teamMembers } from '@assets/data';
-//import { stock } from '@components/Home/stock'
+import Logo from '@assets/img/logo.svg';
 
 function Home() {
-	const TeamMembers = teamMembers.map((member: any) => (
+	const TeamMembers = teamMembers.map((member: any) =>
 		<div key={member.title} className={style.teammember}>
 			<div className={style.teambilde}>
 				<Image src={member.img} alt="" layout="responsive" />
@@ -22,7 +21,7 @@ function Home() {
 			
 			<div className={style.teamname}>{member.title}</div>
 		</div>
-	));
+	);
 
 	if(typeof window == 'undefined') return null;
 	
