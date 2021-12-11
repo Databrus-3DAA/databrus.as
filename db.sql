@@ -29,5 +29,5 @@ INSERT INTO `machine_items` (`name`, `label`, `pos`, `price`, `stock`, `machineI
     ('cocaCola', 'Coca Cola','{"x":0,"y":"D"}',  24, 22, 2);
 
 CREATE USER IF NOT EXISTS 'databrus.as'@'%' IDENTIFIED BY 'rErar45iwIruz5XAViVeQ7dagumuro';
-GRANT SELECT, INSERT, UPDATE, DELETE ON `databrus` TO 'Test'@'%';
+GRANT SELECT, INSERT, UPDATE, DELETE ON `databrus`.* TO 'databrus.as'@'%';
 FLUSH PRIVILEGES;
