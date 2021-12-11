@@ -29,5 +29,5 @@ INSERT INTO `machine_items` (`name`, `label`, `pos`, `price`, `stock`, `machineI
     ('cocaCola', 'Coca Cola','{"x":0,"y":"D"}',  24, 22, 2);
 
 CREATE USER IF NOT EXISTS 'databrus.as'@'%' IDENTIFIED BY 'rErar45iwIruz5XAViVeQ7dagumuro';
-GRANT EXECUTE, SELECT, SHOW VIEW, ALTER, ALTER ROUTINE, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, CREATE VIEW, DELETE, DROP, EVENT, INDEX, INSERT, REFERENCES, TRIGGER, UPDATE, LOCK TABLES  ON `databrus`.* TO 'Test'@'%' WITH GRANT OPTION;
+GRANT SELECT, INSERT, UPDATE, DELETE ON `databrus` TO 'Test'@'%';
 FLUSH PRIVILEGES;
