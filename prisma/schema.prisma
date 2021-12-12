@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Item {
+  id        Int     @id @default(autoincrement())
+  name      String  @default("databrus") @db.VarChar(60)
+  label     String  @default("Databrus") @db.VarChar(60)
+  pos       String  @default("{\"x\":0,\"y\":0}") @db.LongText
+  price     Int     @default(30)
+  stock     Int     @default(0)
+  machineId Int
+  machines  Machine @relation(fields: [machineId], references: [id], onUpdate: Restrict, map: "machine_items_ibfk_1")
+
+  @@index([machineId], map: "machineId")
+  @@map("machine_items")
+}
+
+model Machine {
+  id            Int    @id @default(autoincrement())
+  location      String @db.VarChar(120)
+  locationDesc  String @db.VarChar(120)
+  machine_items Item[]
+
+  @@map("machines")
+}
