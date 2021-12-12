@@ -1,9 +1,9 @@
 import { NextApiHandler } from "next";
-import { query } from "@lib/db";
+import { prisma } from "@lib/prisma"; 
 
 const handler: NextApiHandler = async(_, res) => {
     try {
-        const result = await query(`SELECT * FROM machines`);
+        const result = await prisma.machine.findMany();
         return res.json(result);
     } catch(e) {
         if(e instanceof Error) res.status(500).json({ message: e.message });
