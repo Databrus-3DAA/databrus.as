@@ -9,9 +9,20 @@ import { isMobile } from '@lib/utils';
 import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
-import Logo from '@assets/img/logo.png';
+import Logo from '@assets/img/logo.svg';
+import { teamMembers } from '@assets/data';
 
 function Home() {
+	const TeamMembers = teamMembers.map((member: any) => (
+		<div key={member.title} className={style.teammember}>
+			<div className={style.teambilde}>
+				<Image src={member.img} alt="" layout="responsive" />
+			</div>
+			
+			<div className={style.teamname}>{member.title}</div>
+		</div>
+	));
+
 	if(typeof window == 'undefined') return null;
 	
 	const mobile = isMobile();
@@ -69,7 +80,7 @@ function Home() {
 					</div>
 				</div>
 
-				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('https://thumbs.dreamstime.com/b/cool-wallpapers-backgrounds-check-out-our-68126782.jpg"}}>
+				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/team.png')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
 							<span>TEAME</span>T
@@ -77,12 +88,19 @@ function Home() {
 					</div>
 				</div>
 
-				<div className={style.main}>
-					<p className={`${style.center} ${style.highlight}`}>
-						Bilder av Teamet kommer etterhvert.
-					</p>
-				</div>
+					<div className={style.main}>
+						<h1 className={style.center}>Møt teamet bak Databrus</h1>
+						
+						<p className={`${style.center} ${style.highlight}`}>
+							Under er alles navn og hovedrolle i teamet.
+						</p>
 
+						<div className={style.team}>
+							{ TeamMembers }
+						</div>
+					</div>
+
+				
 				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
@@ -91,7 +109,7 @@ function Home() {
 					</div>
 				</div>
 
-				<div className={style.main}>
+				<div className={style.main} style={{maxWidth: '100vw'}}>
 					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row', width: '100%'}}>
 						<div>
 							<MdLocationOn className={style.icon} />
