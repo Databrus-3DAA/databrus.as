@@ -1,20 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
-import { Header, Footer, Stock} from '@components/Home';
-import style from '@styles/Home/Main.module.css';
-import mStyle from '@styles/Home/Mobile/Main.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { isMobile } from '@lib/utils';
+import style from '@styles/Home/Main.module.css';
+import mStyle from '@styles/Home/Mobile/Main.module.css';
+import Logo from '@assets/img/logo.svg';
+import useSWR from 'swr';
+import { Header, Footer } from '@components/Home';
+import { fetcher, isMobile } from '@lib/utils';
 import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
-import Logo from '@assets/img/logo.svg';
 import { teamMembers } from '@assets/data';
-//import { stock } from '@components/Home/stock'
+import { Stock } from '@lib/types';
 
 function Home() {
-	const TeamMembers = teamMembers.map((member: any) => (
+	const { data, error } = useSWR<Stock[]>('/api/getstock', fetcher)!;
+	const TeamMembers = teamMembers.map((member: any) =>
 		<div key={member.title} className={style.teammember}>
 			<div className={style.teambilde}>
 				<Image src={member.img} alt="" layout="responsive" />
@@ -22,7 +24,7 @@ function Home() {
 			
 			<div className={style.teamname}>{member.title}</div>
 		</div>
-	));
+	);
 
 	if(typeof window == 'undefined') return null;
 	
@@ -81,10 +83,28 @@ function Home() {
 					</div>
 				</div>
 
-		<h2>Vinkjelleren inndeholder</h2>
-			<div className={style.colorstock}>
-				<Stock/>
-			</div>
+				<div className={style.stock}>
+					<h1>Vinkjelleren inndeholder</h1>
+					
+					<div className={style.main}>
+						
+						{(!data && !error) && 
+							<div className={style.status}>Loading...</div>
+						}
+
+						{error && 
+							<div className={style.status}>Noe gikk galt</div>
+						}
+
+						{(!error && data) &&
+							data.map((item: Stock) => 
+								<div key={item.label} className={style.stockItem}>
+									{`${item.label}: ${item.stock}`}
+								</div>
+							)
+						}
+					</div>
+				</div>
 
 				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/team.png')"}}>
 					<div className={style.titleContainer}>
@@ -94,18 +114,17 @@ function Home() {
 					</div>
 				</div>
 
-					<div className={style.main}>
-						<h1 className={style.center}>Møt teamet bak Databrus</h1>
+				<div className={style.main}>
+					<h1 className={style.center}>Møt teamet bak Databrus</h1>
 						
-						<p className={`${style.center} ${style.highlight}`}>
-							Under er alles navn og hovedrolle i teamet.
-						</p>
+					<p className={`${style.center} ${style.highlight}`}>
+						Under er alles navn og hovedrolle i teamet.
+					</p>
 
-						<div className={style.team}>
-							{ TeamMembers }
-						</div>
+					<div className={style.team}>
+						{ TeamMembers }
 					</div>
-
+				</div>
 				
 				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.titleContainer}>
@@ -116,7 +135,7 @@ function Home() {
 				</div>
 
 				<div className={style.main} style={{maxWidth: '100vw'}}>
-					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row', width: '100%'}}>
+					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row'}}>
 						<div>
 							<MdLocationOn className={style.icon} />
 							<Link href="https://goo.gl/maps/9JbEKKbJYLHHeNor9">Dyreveien 9, 1532 Moss</Link>

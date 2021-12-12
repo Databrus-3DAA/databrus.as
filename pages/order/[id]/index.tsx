@@ -1,13 +1,13 @@
 import React from 'react';
 import useSWR from 'swr';
+import Head from 'next/head';
+import Link from 'next/link';
+import style from '@styles/Order/Order.module.css';
+import mStyle from '@styles/Order/Mobile/Order.module.css';
 import { useRouter } from 'next/router';
 import { fetcher, isMobile } from '@lib/utils';
 import { Footer } from '@components/Home';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
-import Head from 'next/head';
-import style from '@styles/Order/Order.module.css';
-import mStyle from '@styles/Order/Mobile/Order.module.css';
-import Link from 'next/link';
 
 function Order() {
     const { query: { id }} = useRouter();
