@@ -14,8 +14,12 @@ Second, download project dependencied:
 yarn
 ```
 
-Third, run the development server:
+Third, generate prisma types:
+```bash
+yarn prisma generate
+```
 
+Fourth, run the development server:
 ```bash
 yarn dev
 ```
