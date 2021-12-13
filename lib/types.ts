@@ -1,4 +1,4 @@
 export type Stock = {
-    label: string;
-    stock: number;
+	label: string;
+	stock: number;
 }

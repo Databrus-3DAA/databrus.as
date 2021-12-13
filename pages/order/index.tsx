@@ -1,34 +1,57 @@
-import React from 'react';
 import useSWR from 'swr';
-import { iMachines } from '@lib/types/interfaces';
-import { fetcher } from '@lib/utils';
-import style from '@styles/Order/Choose.module.css';
+import Head from 'next/head';
+import Link from 'next/link';
+import style from '@styles/Order/Order.module.css';
+import mStyle from '@styles/Order/Mobile/Order.module.css';
+import { fetcher, isMobile } from '@lib/utils';
+import { Footer } from '@components/Home';
+import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 
-function Machines() {
-    const { data, error } = useSWR('/api/machines', fetcher);
-    
-    if(error) {
-        console.log(error)
-        return "An error has occured";
-    }
+function Order() {
+	const { data, error } = useSWR(`/api/machines/`, fetcher);
+	const mobile = isMobile();
 
-    if(!data) return "Loading...";
+	if(typeof window == 'undefined') return null;
 
-    console.log(data)
+	return (
+		<div>
+			<Head>
+				<title>Velg maskin | Databrus UB</title>
+			</Head>
+			
+			<div className={style.container}>
+				<div className={style.header}>
+					<Link href='/order'>
+						<a>
+							<div className={style.backButton}>
+								<MdOutlineKeyboardBackspace className={style.icon}/>
+							</div>
+						</a>
+					</Link>
 
-    return (
-        <div className={style.container}>
-            <div className={style.label}>
-                <p className={style.labeltx}>Velg maskin</p>
-            </div>
-            <div className={style.undersqare}>
-                <button className={style.maskin}></button>
-                {/* <button className={style.maskin}></button>
-                <button className={style.maskin}></button>
-                <button className={style.maskin}></button> */}
-            </div>
-        </div>
-    )
+					<div className={style.title}>Velg maskin</div>
+				</div>
+				
+				<div className={style.main}>
+					{(!data && !error) && 
+						<div className={style.status}>Loading...</div>
+					}
+
+					{error && 
+						<div className={style.status}>Noe gikk galt</div>
+					}
+					
+					{(!error && data) &&
+						<div className={style.itemContainer}>
+
+						</div>
+					}
+				</div>
+			</div>
+			
+			<Footer />
+		</div>
+	)
 };
 
-export default Machines;
+export default Order;

@@ -6,10 +6,10 @@ import Thomas from './Team/Thomas.jpg';
 import Tomas from './Team/Tomas.png';
 
 export {
-    Erling,
-    Linus,
-    Sander,
-    Steinar,
-    Thomas,
-    Tomas,
+	Erling,
+	Linus,
+	Sander,
+	Steinar,
+	Thomas,
+	Tomas,
 };

@@ -15,7 +15,7 @@ import { teamMembers } from '@assets/data';
 import { Stock } from '@lib/types';
 
 function Home() {
-	const { data, error } = useSWR<Stock[]>('/api/getstock', fetcher)!;
+	const { data, error } = useSWR<Stock[]>('/api/getstock', fetcher);
 	const TeamMembers = teamMembers.map((member: any) =>
 		<div key={member.title} className={style.teammember}>
 			<div className={style.teambilde}>
