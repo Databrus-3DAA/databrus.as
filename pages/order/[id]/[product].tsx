@@ -15,9 +15,6 @@ function Payment() {
 	const { data, error } = useSWR<Item>((id && product) ? `/api/machines/${id}/items/${product}` : null, fetcher);
 	const mobile = useMediaQuery({ maxWidth: 768 });
 
-	console.log('Error:', error);
-	console.log('Data:', data);
-
 	if(typeof window == 'undefined') return null;
 	
 	return (
@@ -28,7 +25,7 @@ function Payment() {
 			
 			<div className={style.container}>
 				<div className={style.header}>
-					<Link href='/'>
+					<Link href={id ? `/order/${id}/` : '/order'}>
 						<a>
 							<div className={style.backButton}>
 								<MdOutlineKeyboardBackspace className={style.icon}/>
