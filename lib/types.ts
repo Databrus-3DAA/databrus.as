@@ -1,3 +1,4 @@
 export type Stock = {
-    [key: string]: number;
+    label: string;
+    stock: number;
 }

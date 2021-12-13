@@ -5,15 +5,18 @@ import { Stock } from "@lib/types";
 
 const handler: NextApiHandler = async(_, res) => {
     try {
-        let stock: Stock = {}
+        let stock: Stock[] = [];
         const result = await prisma.item.findMany();
 
         result.forEach((item: Item) => {
-            if(!stock[item.label]) {
-                stock[item.label] = 0;
+            if(stock.filter(s => s.label === item.label).length === 0) {
+                stock.push({
+                    label: item.label,
+                    stock: item.stock,
+                });
+            } else {
+                stock[stock.findIndex(s => s.label === item.label)].stock += item.stock;
             }
-
-            stock[item.label] += Number(item.stock);
         });
 
         return res.json(stock);
