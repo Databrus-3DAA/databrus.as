@@ -4,14 +4,16 @@ import Link from 'next/link';
 import style from '@styles/Order/Order.module.css';
 import mStyle from '@styles/Order/Mobile/Order.module.css';
 import { useRouter } from 'next/router';
-import { fetcher, isMobile } from '@lib/utils';
+import { fetcher } from '@lib/utils';
+import { useMediaQuery } from 'react-responsive';
 import { Footer } from '@components/Home';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
+import { Item } from '@prisma/client';
 
 function Order() {
 	const { query: { id }} = useRouter();
-	const { data, error } = useSWR(`/api/machines/${id}/items`, fetcher);
-	const mobile = isMobile();
+	const { data, error } = useSWR<Item[]>(id ? `/api/machines/${id}/items` : null, fetcher);
+	const mobile = useMediaQuery({ maxWidth: 768 });
 
 	if(typeof window == 'undefined') return null;
 
@@ -35,11 +37,11 @@ function Order() {
 				</div>
 				
 				<div className={style.main}>
-					{(!data && !error) && 
+					{((!data && !error) || !id) && 
 						<div className={style.status}>Loading...</div>
 					}
 
-					{error && 
+					{(error && !data) &&
 						<div className={style.status}>Noe gikk galt</div>
 					}
 					

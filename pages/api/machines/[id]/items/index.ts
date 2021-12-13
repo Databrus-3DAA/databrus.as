@@ -8,6 +8,7 @@ const handler: NextApiHandler = async(req, res) => {
 	if(Number(id) < 1) return res.status(400).json({ message: '`id` must be a positiv number' });
 
 	try {
+		if(!(await prisma.machine.findFirst({ where: { id: Number(id) } }))) return res.status(400).json({ message: 'Machine not found' });
 		const result = await prisma.item.findMany({ where: { machineId: Number(id) } });
 		return res.json(result);
 	} catch(e) {

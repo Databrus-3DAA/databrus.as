@@ -9,7 +9,7 @@ const handler: NextApiHandler = async(req, res) => {
 
 	try {
 		const result = await prisma.machine.findFirst({ where: { id: Number(id) } });
-		return res.json(result);
+		return result ? res.json(result) : res.status(400).json({ message: 'Machine not found' });
 	} catch (e) {
 		if(e instanceof Error) res.status(500).json({ message: e.message });
 	};

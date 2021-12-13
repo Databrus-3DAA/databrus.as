@@ -7,7 +7,8 @@ import mStyle from '@styles/Home/Mobile/Main.module.css';
 import Logo from '@assets/img/logo.svg';
 import useSWR from 'swr';
 import { Header, Footer } from '@components/Home';
-import { fetcher, isMobile } from '@lib/utils';
+import { fetcher } from '@lib/utils';
+import { useMediaQuery } from 'react-responsive';
 import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
@@ -16,6 +17,7 @@ import { Stock } from '@lib/types';
 
 function Home() {
 	const { data, error } = useSWR<Stock[]>('/api/getstock', fetcher);
+	const mobile = useMediaQuery({ maxWidth: 768 });
 	const TeamMembers = teamMembers.map((member: any) =>
 		<div key={member.title} className={style.teammember}>
 			<div className={style.teambilde}>
@@ -27,8 +29,6 @@ function Home() {
 	);
 
 	if(typeof window == 'undefined') return null;
-	
-	const mobile = isMobile();
 
 	return (
 		<div>
@@ -87,12 +87,11 @@ function Home() {
 					<h1>Vinkjelleren inndeholder</h1>
 					
 					<div className={style.main}>
-						
 						{(!data && !error) && 
 							<div className={style.status}>Loading...</div>
 						}
 
-						{error && 
+						{(error && !data) &&
 							<div className={style.status}>Noe gikk galt</div>
 						}
 

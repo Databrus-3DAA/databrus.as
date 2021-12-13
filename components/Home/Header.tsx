@@ -2,10 +2,10 @@ import Link from 'next/link';
 import style from '@styles/Home/Header.module.css';
 import mStyle from '@styles/Home/Mobile/Header.module.css'
 import { useState } from 'react';
-import { isMobile } from '@lib/utils';
 import { MdMenu } from 'react-icons/md';
 import { navItems } from '@assets/data';
 import { useScroll } from '@lib/hooks/useScroll';
+import { useMediaQuery } from 'react-responsive';
 
 function MobileMenu() {
 	const [navBarOpen, setNavBarOpen] = useState(false);
@@ -45,7 +45,7 @@ function Menu() {
 };
 
 function Header() {
-	return isMobile() ? <MobileMenu /> : <Menu />;
+	return useMediaQuery({ maxWidth: 768 }) ? <MobileMenu /> : <Menu />;
 };
 
 export default Header;
