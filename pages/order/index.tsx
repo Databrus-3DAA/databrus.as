@@ -45,7 +45,17 @@ function Order() {
 					
 					{(!error && data) &&
 						<div className={style.itemContainer}>
-							
+							{
+								data.map((machine: Machine) =>
+									<Link key={machine.id} href={`/order/${machine.id}`}>
+										<a className={style.machine}>
+											<div>Lokasjon: {machine.name}</div>
+											<div>Adresse: {machine.address}</div>
+											<div>Lokasjon beskrivelse:<br/>{machine.description}</div>
+										</a>
+									</Link>
+								)
+							}
 						</div>
 					}
 				</div>

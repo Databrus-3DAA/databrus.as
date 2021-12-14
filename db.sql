@@ -3,14 +3,15 @@ USE `databrus`;
 
 CREATE TABLE IF NOT EXISTS `machines` (
     `id` INT NOT NULL AUTO_INCREMENT,
-    `location` VARCHAR(120) NOT NULL,
-    `locationDesc` VARCHAR(120) NOT NULL,
+    `name` VARCHAR(120) NOT NULL,
+    `address` VARCHAR(120) NOT NULL,
+    `description` VARCHAR(120) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
-INSERT INTO `machines` (`location`, `locationDesc`) VALUES
-    ('Malakoff VGS (Dyreveien 9, 1532 Moss)', 'Inne på rom G280'),
-    ('Malakoff VGS (Dyreveien 9, 1532 Moss)', 'Kantina');
+INSERT INTO `machines` (`name`, `address`, `description`) VALUES
+    ('Malakoff VGS', 'Dyreveien 9, 1532 Moss', 'Inne på rom G280'),
+    ('Malakoff VGS', 'Dyreveien 9, 1532 Moss', 'Kantina');
 
 CREATE TABLE IF NOT EXISTS `machine_items` (
     `id` INT NOT NULL AUTO_INCREMENT,

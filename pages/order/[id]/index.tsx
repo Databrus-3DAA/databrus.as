@@ -47,7 +47,15 @@ function Order() {
 					
 					{(!error && data) &&
 						<div className={style.itemContainer}>
-
+							{
+								data.map((item: Item) =>
+									<Link key={item.id} href={`/order/${item.machineId}/${item.name}`}>
+										<a className={style.machineItem}>
+											<div>{item.name}</div>
+										</a>
+									</Link>
+								)
+							}
 						</div>
 					}
 				</div>
