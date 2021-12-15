@@ -84,7 +84,7 @@ function Home() {
 				</div>
 
 				<div className={style.stock}>
-					<h1>Vinkjelleren inndeholder</h1>
+					<h1>Vinkjelleren inneholder</h1>
 					
 					<div className={style.main}>
 						{(!data && !error) && 
