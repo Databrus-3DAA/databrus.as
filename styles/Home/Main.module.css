@@ -190,6 +190,7 @@
 	text-align: center;
 	flex-direction: column;
 	border: 2px solid var(--highlight);
+	background-color: var(--highlight);
 	border-radius: 5px;
 	overflow: hidden;
 }
@@ -205,6 +206,6 @@
 	justify-content: center;
 	margin: 0;
 	height: 48px;
+	border-radius: 0;
 	color: var(--darkbackground);
-	background-color: var(--highlight);
 }

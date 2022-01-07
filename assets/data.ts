@@ -18,10 +18,6 @@ export const navItems = [
 	{
 		label: "Kjøp",
 		path: "/wip"
-	},
-	{
-		label: "Admin",
-		path: "/wip"
 	}
 ];
 

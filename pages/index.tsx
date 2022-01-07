@@ -16,7 +16,6 @@ import { teamMembers } from '@assets/data';
 import { Stock } from '@lib/types';
 
 function Home() {
-	const { data, error } = useSWR<Stock[]>('/api/getstock', fetcher);
 	const mobile = useMediaQuery({ maxWidth: 768 });
 	const TeamMembers = teamMembers.map((member: any) =>
 		<div key={member.title} className={style.teammember}>
@@ -87,21 +86,7 @@ function Home() {
 					<h1>Vinkjelleren inneholder</h1>
 					
 					<div className={style.main}>
-						{(!data && !error) && 
-							<div className={style.status}>Loading...</div>
-						}
-
-						{(error && !data) &&
-							<div className={style.status}>Noe gikk galt</div>
-						}
-
-						{(!error && data) &&
-							data.map((item: Stock) => 
-								<div key={item.label} className={style.stockItem}>
-									{`${item.label}: ${item.stock}`}
-								</div>
-							)
-						}
+						<div className={style.status}>Under Utvikling</div>
 					</div>
 				</div>
 
