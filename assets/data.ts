@@ -39,6 +39,10 @@ export const teamMembers = [
 	{
 		img: Linus,
 		title: "VP: Linus",
+	},	
+	{
+		img: Steinar,
+		title: "Personalsjef: Steinar",
 	},
 	{
 		img: Thomas,
@@ -48,8 +52,5 @@ export const teamMembers = [
 		img: Sander,
 		title: "Utvikler: Sander",
 	},
-	{
-		img: Steinar,
-		title: "Personalsjef: Steinar",
-	},
+
 ];
