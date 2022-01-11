@@ -24,3 +24,32 @@ export const navItems = [
         path: "/admin"
     }
 ];
+
+import { Erling, Linus, Sander, Steinar, Thomas, Tomas } from '@assets/img/team';
+
+export const teamMembers = [
+    {
+        img: Tomas,
+        title: "Grunnlegger: Tomas",
+    },
+    {
+        img: Erling,
+        title: "CEO: Erling",
+    },
+    {
+        img: Linus,
+        title: "VP: Linus",
+    },
+    {
+        img: Thomas,
+        title: "Utvikler: Thomas",
+    },
+    {
+        img: Sander,
+        title: "Utvikler: Sander",
+    },
+    {
+        img: Steinar,
+        title: "Personalsjef: Steinar",
+    },
+];

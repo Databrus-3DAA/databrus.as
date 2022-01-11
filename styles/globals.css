@@ -6,6 +6,7 @@
 }
 
 :root {
+    --darkbackground: #080808;
     --background: #161616;
     --subbackground: #2c2c2c;
     --highlight: #03a062;
