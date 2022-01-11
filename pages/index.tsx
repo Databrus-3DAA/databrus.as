@@ -72,7 +72,7 @@ function Home() {
 								på Malakoff Vgs i 2021. Vi hadde en drøm om å fikse denne 
 								vakre automaten, slik at alle kunne få et bredere 
 								utvalg på skolen av snacks, drikke og godt humør. Dere er 
-								så heldige at dere for lov til å bli med på denne reisen med 
+								så heldige at dere får lov til å bli med på denne reisen med 
 								oss. Har dere innspill eller idéer, kan dere sende det til vår 
 								kundeservice (mail står under). Føler dere noe ikke er som 
 								det skal, eller at noe kunne vært bedre, ikke nøl med å ta 
