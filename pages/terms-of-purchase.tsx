@@ -20,7 +20,7 @@ function PurchaseTerms() {
 
 			<Header ignore={true} />
 
-			<div className={style.container} style={{ backgroundColor: "var(--darkbackground)", justifyContent: "flex-start" }}>
+			<div className={style.container}>
 				<div className={style.main} style={{ width: "100%" }}>
 					<h1 className={style.center} style={{ fontSize: "28px", letterSpacing: "3px", marginBottom: "20px" }}>KJØPSVILKÅR</h1>
 
