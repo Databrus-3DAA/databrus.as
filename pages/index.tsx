@@ -1,19 +1,23 @@
 import React from 'react';
 import Head from 'next/head';
-import { Header, Footer } from '@components/Home';
-import style from '@styles/Home/Main.module.css';
-import mStyle from '@styles/Home/Mobile/Main.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { isMobile } from '@lib/utils';
+import style from '@styles/Home/Main.module.css';
+import mStyle from '@styles/Home/Mobile/Main.module.css';
+import Logo from '@assets/img/logo.svg';
+import useSWR from 'swr';
+import { Header, Footer } from '@components/Home';
+import { fetcher } from '@lib/utils';
+import { useMediaQuery } from 'react-responsive';
 import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
-import Logo from '@assets/img/logo.svg';
 import { teamMembers } from '@assets/data';
+import { Stock } from '@lib/types';
 
 function Home() {
-	const TeamMembers = teamMembers.map((member: any) => (
+	const mobile = useMediaQuery({ maxWidth: 768 });
+	const TeamMembers = teamMembers.map((member: any) =>
 		<div key={member.title} className={style.teammember}>
 			<div className={style.teambilde}>
 				<Image src={member.img} alt="" layout="responsive" />
@@ -21,11 +25,9 @@ function Home() {
 			
 			<div className={style.teamname}>{member.title}</div>
 		</div>
-	));
+	);
 
 	if(typeof window == 'undefined') return null;
-	
-	const mobile = isMobile();
 
 	return (
 		<div>
@@ -70,13 +72,21 @@ function Home() {
 								på Malakoff Vgs i 2021. Vi hadde en drøm om å fikse denne 
 								vakre automaten, slik at alle kunne få et bredere 
 								utvalg på skolen av snacks, drikke og godt humør. Dere er 
-								så heldige at dere for lov til å bli med på denne reisen med 
+								så heldige at dere får lov til å bli med på denne reisen med 
 								oss. Har dere innspill eller idéer, kan dere sende det til vår 
 								kundeservice (mail står under). Føler dere noe ikke er som 
 								det skal, eller at noe kunne vært bedre, ikke nøl med å ta 
 								kontakt.
 							</p>
 						</div>
+					</div>
+				</div>
+
+				<div className={style.stock}>
+					<h1>Vinkjelleren inneholder</h1>
+					
+					<div className={style.main}>
+						<div className={style.status}>Under Utvikling</div>
 					</div>
 				</div>
 
@@ -88,18 +98,17 @@ function Home() {
 					</div>
 				</div>
 
-					<div className={style.main}>
-						<h1 className={style.center}>Møt teamet bak Databrus</h1>
+				<div className={style.main}>
+					<h1 className={style.center}>Møt teamet bak Databrus</h1>
 						
-						<p className={`${style.center} ${style.highlight}`}>
-							Under er alles navn og hovedrolle i teamet.
-						</p>
+					<p className={`${style.center} ${style.highlight}`}>
+						Under er alles navn og hovedrolle i teamet.
+					</p>
 
-						<div className={style.team}>
-							{ TeamMembers }
-						</div>
+					<div className={style.team}>
+						{ TeamMembers }
 					</div>
-
+				</div>
 				
 				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.titleContainer}>
@@ -110,7 +119,7 @@ function Home() {
 				</div>
 
 				<div className={style.main} style={{maxWidth: '100vw'}}>
-					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row', width: '100%'}}>
+					<div className={style.contact} style={{flexDirection: mobile ? 'column' : 'row'}}>
 						<div>
 							<MdLocationOn className={style.icon} />
 							<Link href="https://goo.gl/maps/9JbEKKbJYLHHeNor9">Dyreveien 9, 1532 Moss</Link>

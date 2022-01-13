@@ -23,8 +23,9 @@ model Item {
 
 model Machine {
   id            Int    @id @default(autoincrement())
-  location      String @db.VarChar(120)
-  locationDesc  String @db.VarChar(120)
+  name          String @db.VarChar(120)
+  address       String @db.VarChar(120)
+  description   String @db.VarChar(120)
   machine_items Item[]
 
   @@map("machines")
