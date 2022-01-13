@@ -1,24 +1,24 @@
 export const navItems = [
-	{
-		label: "Home",
-		path: "/#home"
-	},
-	{
-		label: "Om oss",
-		path: "/#about",
-	},
-	{
-		label: "Teamet",
-		path: "/#team",
-	},
-	{
-		label: "Kontakt oss",
-		path: "/#contact",
-	},
-	{
-		label: "Kjøp",
-		path: "/wip"
-	}
+    {
+        label: "Home",
+        path: "/#home"
+    },
+    {
+        label: "Om oss",
+        path: "/#about",
+    },
+    {
+        label: "Teamet",
+        path: "/#team",
+    },
+    {
+        label: "Kontakt oss",
+        path: "/#contact",
+    },
+    {
+        label: "Kjøp",
+        path: "/wip"
+    }
 ];
 
 import { Erling, Linus, Sander, Steinar, Thomas, Tomas } from '@assets/img/team';
