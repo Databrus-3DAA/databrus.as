@@ -18,7 +18,7 @@ function MobileMenu({ ignore }: { ignore: boolean }) {
 			<div className={transparent ? style.hide : style.show}>
 				<div className={`${style.title} ${transparent ? style.tHide : style.tShow}`}>DATABRUS UB</div>
 				
-				<button className={mStyle.button} onClick={() => {setNavBarOpen(!navBarOpen)}}><MdMenu /></button>
+				<button className={mStyle.button} onClick={() => {setNavBarOpen(!navBarOpen)}} aria-label="Open nav menu"><MdMenu /></button>
 					
 				<div className={`${mStyle.dropdown} ${navBarOpen ? mStyle.show : mStyle.hide}`} id="dropdown">
 					{ listItems }
