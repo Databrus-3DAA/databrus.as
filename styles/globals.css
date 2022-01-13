@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @font-face {
-    font-family: Sansation;
-    src: url(/Sansation_Regular.ttf);
+	font-display: swap;
+	font-family: Sansation;
+    src: local(Roboto), url(/Sansation_Regular.ttf);
 }
 
 :root {
@@ -28,8 +29,4 @@
 
 body {
 	background: var(--background);
-}
-
-a {
-    text-decoration: none;
 }

@@ -16,6 +16,10 @@ export const navItems = [
 		path: "/#contact",
 	},
 	{
+		label: "Kjøpsvilkår",
+		path: "/terms-of-purchase",
+	},
+	{
 		label: "Kjøp",
 		path: "/wip"
 	}

@@ -34,12 +34,13 @@ function Home() {
 			<Head>
 				<title>Databrus UB</title>
 				<link rel="icon" href="./favicon.ico" />
+				<meta name="description" content="Homepage of the company Databrus UB" />
 			</Head>
 
-			<Header />
+			<Header ignore={false} />
 
 			<div className={style.container}>
-				<div id="home" className={`${mobile ? style.bgimg3 : style.bgimg1}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
+				<div id="home" className={`${mobile ? style.bgimg3 : style.bgimg1}`} style={{backgroundImage:"url('/img/1.webp')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
 							<span>DATABRUS U</span>B
@@ -90,7 +91,7 @@ function Home() {
 					</div>
 				</div>
 
-				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/team.png')"}}>
+				<div id="team" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/team.webp')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
 							<span>TEAME</span>T
@@ -110,7 +111,7 @@ function Home() {
 					</div>
 				</div>
 				
-				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
+				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.webp')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
 							<span>KONTAKT OS</span>S

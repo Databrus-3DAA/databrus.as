@@ -7,6 +7,10 @@
     height: 48px;
 }
 
+.container a {
+	text-decoration: none;
+}
+
 .show {
     height: inherit;
     background-color: var(--subbackground);

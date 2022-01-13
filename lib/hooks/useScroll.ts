@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export function useScroll() {
 	const [ scrollValue, setScrollValue ] = useState(0);
-	
 	const handleScroll = () => {
 		setScrollValue(document.documentElement.scrollTop);
 	};

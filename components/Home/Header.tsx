@@ -7,10 +7,11 @@ import { navItems } from '@assets/data';
 import { useScroll } from '@lib/hooks/useScroll';
 import { useMediaQuery } from 'react-responsive';
 
-function MobileMenu() {
+function MobileMenu({ ignore }: { ignore: boolean }) {
 	const [navBarOpen, setNavBarOpen] = useState(false);
 	const listItems = navItems.map((item: any) => <Link key={item.label} href={item.path}><a className={mStyle.dropItem} onClick={() => {setNavBarOpen(!navBarOpen)}}>{item.label}</a></Link>);
-	const transparent = useScroll() < 20;
+	const scroll = useScroll();
+	const transparent = ignore ? false :  scroll < 20;
 	
 	return (
 		<div className={style.container}>
@@ -27,9 +28,10 @@ function MobileMenu() {
 	)
 };
 
-function Menu() {
+function Menu({ ignore }: { ignore: boolean }) {
 	const listItems = navItems.map((item: any) => <Link key={item.label} href={item.path}><a className={style.item}>{item.label}</a></Link>);
-	const transparent = useScroll() < 100;
+	const scroll = useScroll();
+	const transparent = ignore ? false :  scroll < 100;
 
 	return (
 		<div className={style.container}>
@@ -44,8 +46,8 @@ function Menu() {
 	)
 };
 
-function Header() {
-	return useMediaQuery({ maxWidth: 768 }) ? <MobileMenu /> : <Menu />;
+function Header({ ignore }: { ignore: boolean }) {
+	return useMediaQuery({ maxWidth: 768 }) ? <MobileMenu ignore={ignore} /> : <Menu ignore={ignore} />;
 };
 
 export default Header;
