@@ -9,10 +9,6 @@ CREATE TABLE IF NOT EXISTS `machines` (
 	PRIMARY KEY (`id`)
 );
 
-INSERT INTO `machines` (`name`, `address`, `description`) VALUES
-	('Malakoff VGS', 'Dyreveien 9, 1532 Moss', 'Inne på rom G280'),
-	('Malakoff VGS', 'Dyreveien 9, 1532 Moss', 'Kantina');
-
 CREATE TABLE IF NOT EXISTS `machine_items` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(60) NOT NULL DEFAULT 'databrus',
@@ -24,6 +20,24 @@ CREATE TABLE IF NOT EXISTS `machine_items` (
 	PRIMARY KEY (`id`),
 	FOREIGN KEY (`machineId`) REFERENCES `machines`(`id`)
 );
+
+CREATE TABLE IF NOT EXISTS `orders` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`state` INT NOT NULL DEFAULT 0,
+	`orderTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`deliverTime` DATETIME,
+	`phone` VARCHAR(8),
+	`code` VARCHAR(5) NOT NULL,
+	`productName` VARCHAR(60) NOT NULL,
+	`productPrice` INT NOT NULL,
+	`product` INT NOT NULL,
+	PRIMARY KEY (`id`),
+	FOREIGN KEY (`product`) REFERENCES `machine_items`(`id`)
+);
+
+INSERT INTO `machines` (`name`, `address`, `description`) VALUES
+	('Malakoff VGS', 'Dyreveien 9, 1532 Moss', 'Inne på rom G280'),
+	('Malakoff VGS', 'Dyreveien 9, 1532 Moss', 'Kantina');
 
 INSERT INTO `machine_items` (`name`, `label`, `pos`, `price`, `stock`, `machineId`) VALUES
 	('cocaCola', 'Coca Cola','{"x":5,"y":"A"}', 24, 22, 1),
