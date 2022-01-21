@@ -1,10 +1,10 @@
 .container {
-    z-index: 1;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    border: 0;
-    height: 48px;
+	z-index: 1;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	border: 0;
+	height: 48px;
 }
 
 .container a {
@@ -12,53 +12,53 @@
 }
 
 .show {
-    height: inherit;
-    background-color: var(--subbackground);
-    border-bottom: 1px solid var(--light);
-    transition: 0.15s linear;
+	height: inherit;
+	background-color: var(--subbackground);
+	border-bottom: 1px solid var(--light);
+	transition: 0.15s linear;
 }
 
 .hide {
-    height: inherit;
-    background-color: transparent;
-    border-bottom: 1px solid transparent;
-    transition: 0.15s linear;
+	height: inherit;
+	background-color: transparent;
+	border-bottom: 1px solid transparent;
+	transition: 0.15s linear;
 }
 
 .title {
-    padding: 6px 8px;
-    font-size: 24px;
-    transition: color 0.15s linear;
-    user-select: none;
+	padding: 6px 8px;
+	font-size: 24px;
+	transition: color 0.15s linear;
+	user-select: none;
 }
 
 .tShow {
-    color: var(--highlight);
+	color: var(--highlight);
 }
 
 .tHide {
-    color: transparent;
+	color: transparent;
 }
 
 .items {
-    position: absolute;
-    height: 48px;
-    top: 0;
-    right: 0;
-    display: flex;
-    gap: 2px;
+	position: absolute;
+	height: 48px;
+	top: 0;
+	right: 0;
+	display: flex;
+	gap: 2px;
 }
 
 .item {
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .05s linear;
-    user-select: none;
+	padding: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: .05s linear;
+	user-select: none;
 }
 
 .item:hover {
-    background-color: var(--highlight);
-    color: var(--subbackground);
+	background-color: var(--highlight);
+	color: var(--subbackground);
 }

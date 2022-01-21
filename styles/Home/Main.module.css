@@ -84,9 +84,9 @@
 }
 
 .stock {
-    background-color: var(--highlight);
+	background-color: var(--highlight);
 	width: 100%;
-    padding: 30px;
+	padding: 30px;
 }
 
 .stock h1 {
@@ -160,25 +160,25 @@
 
 .contact div {
 	display: grid;
-    grid-template-columns: 24px auto;
-    grid-gap: 12px;
+	grid-template-columns: 24px auto;
+	grid-gap: 12px;
 }
 
 .contact a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    color: var(--light);
-    text-decoration: none;
-    background-image: linear-gradient(var(--light), var(--light));
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size: 0% 3px;
-    transition: .25s linear;
+	color: var(--light);
+	text-decoration: none;
+	background-image: linear-gradient(var(--light), var(--light));
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-size: 0% 3px;
+	transition: .25s linear;
 }
 
 .contact a:hover {
-    background-size: 100% 3px;
+	background-size: 100% 3px;
 }
 
 .icon {

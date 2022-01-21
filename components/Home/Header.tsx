@@ -11,7 +11,7 @@ function MobileMenu({ ignore }: { ignore: boolean }) {
 	const [navBarOpen, setNavBarOpen] = useState(false);
 	const listItems = navItems.map((item: any) => <Link key={item.label} href={item.path}><a className={mStyle.dropItem} onClick={() => {setNavBarOpen(!navBarOpen)}}>{item.label}</a></Link>);
 	const scroll = useScroll();
-	const transparent = ignore ? false :  scroll < 20;
+	const transparent = ignore ? false : scroll < 20;
 	
 	return (
 		<div className={style.container}>
@@ -31,12 +31,12 @@ function MobileMenu({ ignore }: { ignore: boolean }) {
 function Menu({ ignore }: { ignore: boolean }) {
 	const listItems = navItems.map((item: any) => <Link key={item.label} href={item.path}><a className={style.item}>{item.label}</a></Link>);
 	const scroll = useScroll();
-	const transparent = ignore ? false :  scroll < 100;
+	const transparent = ignore ? false : scroll < 100;
 
 	return (
 		<div className={style.container}>
-			<div className={transparent ? style.hide : style.show}>           
-				<div className={`${style.title} ${transparent ? style.tHide : style.tShow}`}>DATABRUS UB</div>     
+			<div className={transparent ? style.hide : style.show}>
+				<div className={`${style.title} ${transparent ? style.tHide : style.tShow}`}>DATABRUS UB</div>
 				
 				<div className={style.items}>
 					{ listItems }
