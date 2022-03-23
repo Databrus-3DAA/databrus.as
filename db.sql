@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `machine_items` (
     `name` VARCHAR(60) NOT NULL DEFAULT 'databrus',
     `label` VARCHAR(60) NOT NULL DEFAULT 'Databrus',
     `pos` LONGTEXT NOT NULL DEFAULT '{"x":0,"y":0}',
-    `price` INT NOT NULL DEFAULT 30,
+    `price` DOUBLE NOT NULL DEFAULT 30,
     `stock` INT NOT NULL DEFAULT 0,
     `machineId` INT NOT NULL,
     PRIMARY KEY (`id`),

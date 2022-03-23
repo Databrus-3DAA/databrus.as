@@ -12,7 +12,7 @@ model Item {
   name      String  @default("databrus") @db.VarChar(60)
   label     String  @default("Databrus") @db.VarChar(60)
   pos       String  @default("{\"x\":0,\"y\":0}") @db.LongText
-  price     Int     @default(30)
+  price     Float   @default(30)
   stock     Int     @default(0)
   machineId Int
   machines  Machine @relation(fields: [machineId], references: [id], onUpdate: Restrict, map: "machine_items_ibfk_1")

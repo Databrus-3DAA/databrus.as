@@ -1,6 +1,7 @@
 import useSWR from 'swr';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import style from '@styles/Order/Order.module.css';
 import mStyle from '@styles/Order/Mobile/Order.module.css';
 import { useRouter } from 'next/router';
@@ -9,6 +10,8 @@ import { useMediaQuery } from 'react-responsive';
 import { Footer } from '@components/Home';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 import { Item } from '@prisma/client';
+import { productsImgs } from '@assets/img/products';
+import { Product } from '@lib/types';
 
 function Order() {
 	const { query: { id }} = useRouter();
@@ -51,7 +54,15 @@ function Order() {
 								data.map((item: Item) =>
 									<Link key={item.id} href={`/order/${item.machineId}/${item.name}`}>
 										<a className={style.machineItem}>
-											<div>{item.name}</div>
+											<div>{item.label}</div>
+											<div>
+												<Image src={productsImgs[item.name as Product]} alt="" />
+											</div>
+											<div className={style.stockAndPrice}>
+												<div>Qty: {item.stock}</div>
+												<div>|</div>
+												<div>{item.price.toFixed(2)} kr</div>
+											</div>
 										</a>
 									</Link>
 								)
