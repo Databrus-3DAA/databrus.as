@@ -23,7 +23,7 @@ function Home() {
 			<div className={style.teambilde}>
 				<Image src={member.img} alt="" layout="responsive" />
 			</div>
-			
+
 			<div className={style.teamname}>{member.title}</div>
 		</div>
 	);
@@ -47,7 +47,7 @@ function Home() {
 						</div>
 					</div>
 				</div>
-				
+
 				<div id="about" className={style.main}>
 					<h1 className={style.center}>OM DATABRUS</h1>
 					<p className={style.center}>
@@ -67,7 +67,7 @@ function Home() {
 
 						<div>
 							<h1 className={style.center}>Historie</h1>
-							
+
 							<p>
 								Databrus UB er et selskap dannet av fem entusiastiske elever 
 								på Malakoff Vgs i 2021. Vi hadde en drøm om å fikse denne 
@@ -85,7 +85,7 @@ function Home() {
 
 				<div className={style.stock}>
 					<h1>Vinkjelleren inndeholder</h1>
-					
+
 					<div className={style.main}>
 						{(!data && !error) && 
 							<div className={style.status}>Loading...</div>
@@ -115,7 +115,7 @@ function Home() {
 
 				<div className={style.main}>
 					<h1 className={style.center}>Møt teamet bak Databrus</h1>
-						
+
 					<p className={`${style.center} ${style.highlight}`}>
 						Under er alles navn og hovedrolle i teamet.
 					</p>
@@ -124,7 +124,7 @@ function Home() {
 						{ TeamMembers }
 					</div>
 				</div>
-				
+
 				<div id="contact" className={`${mobile ? style.bgimg3 : style.bgimg2}`} style={{backgroundImage:"url('/img/1.jpg')"}}>
 					<div className={style.titleContainer}>
 						<div className={mobile ? mStyle.title : style.title}>
@@ -149,7 +149,7 @@ function Home() {
 							<AiFillInstagram className={style.icon} />
 							<Link href="https://instagram.com/databrus.ub">databrus.ub</Link>
 						</div>
-						
+
 						<div>
 							<FaDiscord className={style.icon} />
 							<Link href="https://discord.gg/QDVqhZ2KrP">Community Discord</Link>
