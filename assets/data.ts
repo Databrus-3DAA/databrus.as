@@ -17,7 +17,7 @@ export const navItems = [
 	},
 	{
 		label: "Kjøp",
-		path: "/order"
+		path: "/order/1"
 	},
 	// {
 	// 	label: "Admin",

@@ -42,14 +42,14 @@ function Order() {
 								data.map((item: Item) =>
 									<Link key={item.id} href={`/order/${item.machineId}/${item.name}`}>
 										<a className={style.machineItem}>
-											<div>{item.label}</div>
+											<div className={style.machineItemText}>{item.label}</div>
 											<div>
 												<Image src={productsImgs[item.name as Product]} alt="" />
 											</div>
 											<div className={style.stockAndPrice}>
-												<div>Qty: {item.stock}</div>
+												<div className={style.machineItemText}>Qty: {item.stock}</div>
 												<div className={style.spacer} />
-												<div>{item.price.toFixed(2)} kr</div>
+												<div className={style.machineItemText}>{item.price.toFixed(2)} kr</div>
 											</div>
 										</a>
 									</Link>
@@ -65,4 +65,5 @@ function Order() {
 	)
 };
 
-export default withPageAuthRequired(Order);
+export default Order;
+// export default withPageAuthRequired(Order);

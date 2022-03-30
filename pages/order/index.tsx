@@ -40,6 +40,7 @@ function Order() {
 											<div>Lokasjon: {machine.name}</div>
 											<div>Adresse: {machine.address}</div>
 											<div>Lokasjon beskrivelse:<br/>{machine.description}</div>
+											<div>Temperatur: {machine.temperature}°C</div>
 										</a>
 									</Link>
 								)
@@ -54,4 +55,5 @@ function Order() {
 	)
 };
 
-export default withPageAuthRequired(Order);
+export default Order;
+// export default withPageAuthRequired(Order);

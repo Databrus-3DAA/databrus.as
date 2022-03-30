@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.7.0",
-    "@prisma/client": "^3.11.0",
+    "@prisma/client": "^3.11.1",
     "axios": "^0.24.0",
     "next": "12.0.4",
     "react": "17.0.2",
@@ -27,7 +27,7 @@
     "@types/styled-components": "^5.1.15",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
-    "prisma": "^3.11.0",
+    "prisma": "^3.11.1",
     "typescript": "4.5.2"
   }
 }

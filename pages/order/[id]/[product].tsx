@@ -47,4 +47,5 @@ function Payment() {
 	)
 };
 
-export default withPageAuthRequired(Payment);
+export default Payment;
+// export default withPageAuthRequired(Payment);

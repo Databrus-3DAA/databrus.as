@@ -74,11 +74,11 @@
 
 .stockAndPrice .spacer {
 	width: 2px;
-	height: 20px;
+	height: 100%;
 	background-color: var(--background);
 }
 
-.machineItem div {
+.machineItemText {
 	height: 100%;
 	font-size: 20px;
 	display: flex;
