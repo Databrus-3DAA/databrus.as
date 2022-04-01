@@ -11,7 +11,7 @@ model Item {
   id        Int      @id @default(autoincrement())
   name      String   @default("databrus") @db.VarChar(60)
   label     String   @default("Databrus") @db.VarChar(60)
-  pos       String   @default("{\"x\":0,\"y\":0}") @db.LongText
+  pos       String   @db.LongText
   price     Float    @default(30)
   stock     Int      @default(0)
   machineId Int
@@ -34,7 +34,7 @@ model Machine {
 }
 
 model Orders {
-  id            Int       @id @default(autoincrement())
+  id            String    @id @default("232355-databrus-000000") @db.VarChar(22)
   state         Int       @default(0)
   orderTime     DateTime  @default(now()) @db.DateTime(0)
   deliverTime   DateTime? @db.DateTime(0)

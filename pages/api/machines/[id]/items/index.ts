@@ -2,6 +2,8 @@ import { NextApiHandler } from "next";
 import { prisma } from "@lib/prisma";
 
 const handler: NextApiHandler = async(req, res) => {
+	if(req.method != "GET") return res.status(405).json({error: "Method not allowed"});
+
 	const { id } = req.query;
 
 	if(!Number(id)) return res.status(400).json({ message: '`id` must be a number' });
