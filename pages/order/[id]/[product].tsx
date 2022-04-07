@@ -28,7 +28,7 @@ function Payment() {
 		fetcherPost('/api/vipps/initPayment', {
 			phone,
 			product,
-			machineId: 2
+			machineId: id,
 		})
 		.then(res => console.log(res))
 		.catch(err => console.log(err));		

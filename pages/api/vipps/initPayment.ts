@@ -15,12 +15,14 @@ const handler: NextApiHandler = async (req, res) => {
 
 		const product = await prisma.item.findFirst({ where: { name: data.product, machineId: parseInt(data.machineId) }});
 
+		console.log(product);
 		if(!product) return res.status(400).json({ message: 'Item not found' });
 
-		const [ code, orderId ] = await Vipps.generateOrderInfo('46839956');
+		const [ code, orderId ] = await Vipps.generateOrderInfo('99879271');
 		console.log(code, orderId);
 
-		const result = await Vipps.initiate({
+		// const result = await Vipps.initiate(
+		console.log({
 			customerInfo: { mobileNumber: req.body.phone },
 			merchantInfo: {
 				callbackPrefix: process.env.VIPPS_CALLBACK_PREFIX!,
@@ -29,10 +31,12 @@ const handler: NextApiHandler = async (req, res) => {
 			},
 			transaction: {
 				orderId: orderId,
-				amount: req.body.amount,
-				transactionText: req.body.transactionText,
+				amount: product.price * 100,
+				transactionText: `1x ${product.label}`,  
 			}
 		});
+
+		// console.log(result);
 
 		res.json({ message: "Hello World" });
 	} catch(e) {
