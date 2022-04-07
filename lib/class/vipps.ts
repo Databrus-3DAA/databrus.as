@@ -96,20 +96,16 @@ export default class VippsClient {
 	};
 
 	async generateOrderInfo(phone: string) {
-		// try {
-			const codes = (await prisma.orders.findMany({ where: { phone } })).map(order => order.code);
-			const orderIds = (await prisma.orders.findMany()).map(order => order.id);
+		const codes = (await prisma.orders.findMany({ where: { phone } })).map(order => order.code);
+		const orderIds = (await prisma.orders.findMany()).map(order => order.id);
 
-			let orderId: string = `232355-databrus-${Math.floor(Math.random() * (999999 - 10000 + 1)) + 10000}`;
-			while(orderIds.includes(orderId)) orderId = `232355-databrus-${Math.floor(Math.random() * (999999 - 100000 + 1)) + 10000}`;
+		let orderId: string = `232355-databrus-${Math.floor(Math.random() * (999999 - 10000 + 1)) + 10000}`;
+		while(orderIds.includes(orderId)) orderId = `232355-databrus-${Math.floor(Math.random() * (999999 - 100000 + 1)) + 10000}`;
 
-			let code: string = (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000).toString();
-			while(codes.includes(code)) code = (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000).toString();
+		let code: string = (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000).toString();
+		while(codes.includes(code)) code = (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000).toString();
 
-			return [code, orderId];
-		// } catch (e) {
-		// 	if(e instanceof Error) throw Error(e.message);
-		// }
+		return [code, orderId];
 	};
 
 	async initiate(order: OrderInfo) {

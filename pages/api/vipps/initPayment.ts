@@ -1,7 +1,6 @@
 import { NextApiHandler } from "next"; 
 import { prisma } from "@lib/prisma";
 import { Vipps } from "@lib/vipps";
-import { parseBody } from "next/dist/server/api-utils";
 
 const handler: NextApiHandler = async (req, res) => {
 	// if(req.method != "POST") return res.status(405).json({error: "Method not allowed"});
