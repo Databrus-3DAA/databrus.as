@@ -59,7 +59,7 @@ export default class VippsClient {
 			method: 'POST',
 			headers: {
 				'client_id': this.clientId,
-				'client_secret': this.clientId,
+				'client_secret': this.clientSecret,
 				'Ocp-Apim-Subscription-Key': this.subKey
 			}
 		}).then(data => data.json());

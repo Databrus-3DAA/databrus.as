@@ -7,31 +7,31 @@ import { useMediaQuery } from 'react-responsive';
 import { Footer } from '@components/Home';
 import { Item } from '@prisma/client';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
-import { useState } from 'react';
 import style from '@styles/Order/Order.module.css';
 
 function Payment() {
-	const { query: { id, product } } = useRouter();
+	const { query: { id, product }, push } = useRouter();
 	const { data, error } = useSWR<Item>((id && product) ? `/api/machines/${id}/items/${product}` : null, fetcher);
 	const mobile = useMediaQuery({ maxWidth: 768 });
 
-	const [phone, setPhone] = useState<string>('');
-
-	const phoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setPhone(e.target.value);
-	};
-
 	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		console.log(phone);
 
 		fetcherPost('/api/vipps/initPayment', {
-			phone,
 			product,
 			machineId: id,
 		})
 		.then(res => console.log(res))
 		.catch(err => console.log(err));		
+	};
+
+	const onClick = () => {
+		const url = fetcherPost('/api/vipps/initPayment', {
+			product,
+			machineId: id,
+		})
+		.then(res => push(res.url))
+		.catch(err => console.log(err));
 	};
 
 	if(typeof window == 'undefined') return null;
@@ -56,11 +56,7 @@ function Payment() {
 
 					{(!error && data) &&
 						<div className={style.itemContainer}>
-							<form onSubmit={onSubmit}>
-								Phone
-								<input type="text" name="phone" onChange={phoneChange} maxLength={8} minLength={8} />
-								<input type="submit" value="Submit" />
-							</form>
+							<button onClick={onClick}>Vipps</button>
 						</div>
 					}
 				</div>

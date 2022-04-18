@@ -8,7 +8,7 @@ const handler: NextApiHandler = async (req, res) => {
 	try {
 		const data = req.body;
 
-		if(!data.phone) return res.status(400).json({ message: '`phone` is required' });
+		// if(!data.phone) return res.status(400).json({ message: '`phone` is required' });
 		if(!data.product) return res.status(400).json({ message: '`product` is required' });
 		if(!data.machineId) return res.status(400).json({ message: '`machineId` is required' });
 
@@ -20,25 +20,26 @@ const handler: NextApiHandler = async (req, res) => {
 		const [ code, orderId ] = await Vipps.generateOrderInfo('99879271');
 		console.log(code, orderId);
 
-		// const result = await Vipps.initiate(
-		console.log({
+		const result = await Vipps.initiate({
+		// console.log({
 			customerInfo: { mobileNumber: req.body.phone },
 			merchantInfo: {
 				callbackPrefix: process.env.VIPPS_CALLBACK_PREFIX!,
-				fallBack: process.env.VIPPS_FALLBACK!,
+				fallBack: process.env.VIPPS_FALLBACK! += orderId,
 				merchantSerialNumber: '232355',
 			},
 			transaction: {
 				orderId: orderId,
 				amount: product.price * 100,
-				transactionText: `1x ${product.label}`,  
+				transactionText: `1x ${product.label}. Hentekode: ${code}`,  
 			}
 		});
 
-		// console.log(result);
+		console.log(result);
 
-		res.json({ message: "Hello World" });
+		res.json(result);
 	} catch(e) {
+		console.log(e);
 		if(e instanceof Error) res.status(500).json({ message: e.message });
 	};
 }
