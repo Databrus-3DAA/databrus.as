@@ -1,4 +1,4 @@
-import { ProcutImages } from "@lib/types";
+import { ProcutImages } from "@type/products";
 import cocaCola from './Products/cocaCola.png';
 import cocaColaZero from './Products/cocaColaZero.png';
 import pepsi from './Products/pepsi.png';

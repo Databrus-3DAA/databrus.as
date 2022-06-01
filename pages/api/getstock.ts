@@ -1,7 +1,7 @@
 import { NextApiHandler } from "next";
 import { prisma } from "@lib/prisma";
 import { Item } from "@prisma/client";
-import { Stock } from "@lib/types";
+import { Stock } from "@type/products";
 
 const handler: NextApiHandler = async(_, res) => {
 	try {

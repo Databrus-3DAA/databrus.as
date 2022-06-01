@@ -8,7 +8,7 @@ import { fetcher } from '@lib/utils';
 import { Footer } from '@components/Home';
 import { Item } from '@prisma/client';
 import { productsImgs } from '@assets/img/products';
-import { Product } from '@lib/types';
+import { Product } from '@type/products';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import style from '@styles/Order/Order.module.css';
 

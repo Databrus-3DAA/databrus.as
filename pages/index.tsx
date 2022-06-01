@@ -13,7 +13,7 @@ import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import { teamMembers } from '@assets/data';
-import { Stock } from '@lib/types';
+import { Stock } from '@type/products';
 
 function Home() {
 	const { data, error } = useSWR<Stock[]>('/api/getstock', fetcher);

@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
-import React from 'react';
 
-function fallBack() {
+function FallBack() {
 	const { query: { orderId } } = useRouter();
 
 	return (
@@ -11,4 +10,4 @@ function fallBack() {
 	)
 }
 
-export default fallBack;
+export default FallBack;
