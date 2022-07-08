@@ -21,8 +21,12 @@ export const navItems = [
 	},
 	{
 		label: "Kjøp",
-		path: "/wip"
-	}
+		path: "/order/1"
+	},
+	// {
+	// 	label: "Admin",
+	// 	path: "/wip"
+	// }
 ];
 
 import { Erling, Linus, Sander, Steinar, Thomas, Tomas } from '@assets/img/team';

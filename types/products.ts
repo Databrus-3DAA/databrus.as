@@ -11,5 +11,5 @@ export type Product =
 	'fanta';
 
 export type ProcutImages = {
-	[key in Product]: any
+	[key in Product]: any;
 }

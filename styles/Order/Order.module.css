@@ -1,0 +1,88 @@
+.container {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.main {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 64px 16px;
+}
+
+.status {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-family: Roboto;
+
+	width: 100%;
+	height: 100%;
+
+	font-size: 24px;
+}
+
+.itemContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 24px;
+
+	width: 100%;
+	height: 100%;
+}
+
+.machine {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 10px;
+
+	background-color: var(--light);
+	
+	width: 300px;
+	height: 200px;
+	padding: 16px;
+}
+
+.machine div {
+	color: var(--background);
+}
+
+.machineItem {
+	display: grid;
+	grid-template-rows: 40px 1fr 40px;
+	gap: 10px;
+	
+	background-color: var(--light);
+	
+	width: 300px;
+	height: 600px;
+	padding: 20px;
+}
+
+.stockAndPrice {
+	display: grid;
+	grid-template-columns: 1fr 2px 1fr;
+	gap: 10px;	
+}
+
+.stockAndPrice .spacer {
+	width: 2px;
+	height: 100%;
+	background-color: var(--background);
+}
+
+.machineItemText {
+	height: 100%;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--background);
+}

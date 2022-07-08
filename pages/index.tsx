@@ -13,7 +13,7 @@ import { AiFillInstagram } from 'react-icons/ai';
 import { MdLocationOn, MdMail } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import { teamMembers } from '@assets/data';
-import { Stock } from '@lib/types';
+import { Stock } from '@type/products';
 
 function Home() {
 	const mobile = useMediaQuery({ maxWidth: 768 });
@@ -22,7 +22,7 @@ function Home() {
 			<div className={style.teambilde}>
 				<Image src={member.img} alt="" layout="responsive" />
 			</div>
-			
+
 			<div className={style.teamname}>{member.title}</div>
 		</div>
 	);
@@ -47,7 +47,7 @@ function Home() {
 						</div>
 					</div>
 				</div>
-				
+
 				<div id="about" className={style.main}>
 					<h1 className={style.center}>OM DATABRUS</h1>
 					<p className={style.center}>
@@ -67,7 +67,7 @@ function Home() {
 
 						<div>
 							<h1 className={style.center}>Historie</h1>
-							
+
 							<p>
 								Databrus UB er et selskap dannet av fem entusiastiske elever 
 								på Malakoff Vgs i 2021. Vi hadde en drøm om å fikse denne 
@@ -84,8 +84,8 @@ function Home() {
 				</div>
 
 				<div className={style.stock}>
-					<h1>Vinkjelleren inneholder</h1>
-					
+					<h1>Vinkjelleren inndeholder</h1>
+
 					<div className={style.main}>
 						<div className={style.status}>Under Utvikling</div>
 					</div>
@@ -101,7 +101,7 @@ function Home() {
 
 				<div className={style.main}>
 					<h1 className={style.center}>Møt teamet bak Databrus</h1>
-						
+
 					<p className={`${style.center} ${style.highlight}`}>
 						Under er alles navn og hovedrolle i teamet.
 					</p>
@@ -135,7 +135,7 @@ function Home() {
 							<AiFillInstagram className={style.icon} />
 							<Link href="https://instagram.com/databrus.ub">databrus.ub</Link>
 						</div>
-						
+
 						<div>
 							<FaDiscord className={style.icon} />
 							<Link href="https://discord.gg/QDVqhZ2KrP">Community Discord</Link>
